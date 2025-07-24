@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HADZ HOST - Pembayaran & Kontak</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #222;
+
+      /* Efek biru muda di luar lingkaran */
+      box-shadow: 0 0 30px rgba(119, 200, 260, 0.7);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 20px 0 10px;
+      color: #333;
+    }
+
+    .button {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      width: 90%;
+      max-width: 300px;
+      margin: 10px auto;
+      padding: 14px 0;
+      background: linear-gradient(185deg, #000000, #555555);
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      border: 5px solid #75baff;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .button:active {
+      transform: scale(0.96);
+    }
+
+    .button::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s ease;
+      z-index: 0;
+    }
+
+    .button:active::after {
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://files.catbox.moe/0u7h7g.png" class="logo" alt="Logo" />
+
+  <h1>HADZ HOST</h1>
+  <p>Halaman Pembayaran & Kontak</p>
+
+  <div class="section-title">Metode E-Wallet</div>
+  <button class="button" onclick="salin('081396889975')">Salin DANA</button>
+  <button class="button" onclick="salin('089531684165')">Salin GOPAY</button>
+
+  <div class="section-title">Kontak & Testimoni</div>
+  <a href="https://wa.me/6289525832637" class="button">WhatsApp</a>
+  <a href="https://whatsapp.com/channel/0029Vb6Jl5rI7BeMnMGkqJ01" class="button">Saluran Testimoni</a>
+  <a href="https://t.me/hadznewera" class="button">Telegram</a>
+
+  <script>
+    function salin(teks) {
+      var dummy = document.createElement("textarea");
+      dummy.value = teks;
+      document.body.appendChild(dummy);
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+      alert("Berhasil disalin!");
+    }
+  </script>
+
+</body>
+</html>
